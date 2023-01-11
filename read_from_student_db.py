@@ -1,3 +1,5 @@
+# read_from_student_db.py
+
 # Connect the database to Python using the sqlite3 module
 import sqlite3
 
@@ -29,4 +31,13 @@ WHERE gender = ?
 """
 average_age = cursor.execute(average_query, ('female',)).fetchone()[0]
 
+# Group by query - calculate the average age by gender
+group_by_query = """
+SELECT gender, avg(age)
+FROM students
+GROUP BY gender
+"""
+average_age_by_gender = cursor.execute(group_by_query).fetchall()
+
+# Close the connection
 conn.close()
