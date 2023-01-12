@@ -13,7 +13,7 @@ insert_query = """
 INSERT INTO 
     students (firstname, lastname, age, gender)
 VALUES
-    ('Hermione', 'Grainger', 14, 'Female');
+    ('Hermione', 'Grainger', 14, 'female');
 """
 cursor.execute(insert_query)
 conn.commit()
@@ -25,6 +25,10 @@ INSERT INTO
 VALUES
     (?, ?, ?, ?);
 """
+
+cursor.execute(parameterised_insert_query, ('Harry', 'Potter', 16, 'male'))
+conn.commit()
+
 # The Faker module gives a way of creating random data
 fake = Faker('en_GB')
 random.seed(4321)
