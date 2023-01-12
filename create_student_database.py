@@ -1,3 +1,6 @@
+# create_student_database.py
+
+# Import the sqlite3 module
 import sqlite3
 
 # Create a connection to a database - if one does not exist, a new one will be created
