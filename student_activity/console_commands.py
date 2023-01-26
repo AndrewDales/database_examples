@@ -18,7 +18,7 @@ people[1].activities.append(outdoor_ed)
 people[1].activities.append(fives)
 
 # Connect to the activities database
-engine = create_engine('sqlite:///activities.db', echo=True)
+engine = create_engine('sqlite:///activities.sqlite', echo=True)
 
 # Create a session and add the people to the database
 with Session(engine) as sess:
