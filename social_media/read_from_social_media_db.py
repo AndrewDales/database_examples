@@ -4,7 +4,7 @@
 import sqlite3
 
 # Create a connection to the database
-conn = sqlite3.connect("sm_app.sqlite")
+conn = sqlite3.connect("../sm_app.sqlite")
 
 # Create a cursor
 cursor = conn.cursor()
