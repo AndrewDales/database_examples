@@ -40,7 +40,7 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="activities" uuid="021aa2ae-12f4-47cf-86ed-3e91af03530a">
+    <data-source source="LOCAL" name="activities" uuid="369641a5-c7b3-4720-af8d-a9fa9159cd1f">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
