@@ -6,7 +6,7 @@ from sqlalchemy.orm import relationship, backref
 Base = declarative_base()
 
 # Sets up a link table with activity_id and person_id as foreign keys
-# Base.metadata is a container object that keeps together many different features of the database
+# Base.metadata is a container object that keeps together many  features of the database
 person_activity = Table('person_activity',
                         Base.metadata,
                         Column('id', Integer, primary_key=True),
@@ -52,7 +52,7 @@ class Person(Base):
         print(f'{self.first_name} says "hello"!')
 
 
-# Sets up a Location table, this references "activities" via the person_activities table
+# Sets up a Location table, there is a one-to-many relationship between Location and Activity
 class Location(Base):
     __tablename__ = 'location'
     id = Column(Integer, primary_key=True, autoincrement=True)
