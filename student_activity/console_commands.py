@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-from models import Person, Activity
+from models import Person, Activity, Location
 
 # Create some instances of the Person class
 people = [Person(first_name="Andrew", last_name="Dales"),

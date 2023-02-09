@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Table, UniqueConstraint, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 
 # Base is called an Abstract Base Class - our SQL Alchemy models will inherit from this class
 Base = declarative_base()
@@ -21,6 +21,7 @@ class Activity(Base):
     __tablename__ = 'activity'
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String, unique=True, nullable=False)
+    location_id = Column(Integer, ForeignKey("location.id"), default=None)
     attendees = relationship("Person",
                              secondary=person_activity,
                              order_by='(Person.last_name, Person.first_name)',
@@ -51,3 +52,14 @@ class Person(Base):
         print(f'{self.first_name} says "hello"!')
 
 
+# Sets up a Location table, this references "activities" via the person_activities table
+class Location(Base):
+    __tablename__ = 'location'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    room = Column(String, nullable=False)
+    activities = relationship("Activity",
+                              backref=backref("location"))
+
+    # Gives a representation of a Person (for printing out)
+    def __repr__(self):
+        return f"<Person({self.first_name} {self.last_name})>"

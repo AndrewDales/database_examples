@@ -4,19 +4,19 @@
 import sqlite3
 
 # Create a connection to the database
-conn = sqlite3.connect("../sm_app.sqlite")
+conn = sqlite3.connect("sm_app.sqlite")
 
 # Create a cursor
 cursor = conn.cursor()
 
 # Create a SELECTION command
-select_posts = """
-SELECT title, description
-FROM posts
+select_user_posts = """
+SELECT users.name, p.description
+FROM users INNER JOIN posts p on users.id = p.user_id
 """
 
 # Fetch all posts
-posts = cursor.execute(select_posts).fetchall()
+posts = cursor.execute(select_user_posts).fetchall()
 
 # Close the connection
 conn.close()
