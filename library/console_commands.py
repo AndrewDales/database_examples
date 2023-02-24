@@ -32,4 +32,4 @@ new_book.publisher = publishers[2]
 
 # sess.add(new_book)
 # sess.commit()
-sess.close()
+# sess.close()
