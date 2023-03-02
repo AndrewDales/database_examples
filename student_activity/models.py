@@ -27,6 +27,8 @@ class Activity(Base):
                              order_by='(Person.last_name, Person.first_name)',
                              back_populates="activities")
 
+    location = relationship("Location", back_populates="activities")
+
     # Gives a representation of an Activity (for printing out)
     def __repr__(self):
         return f"<Activity({self.name})>"
@@ -58,7 +60,7 @@ class Location(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     room = Column(String, nullable=False)
     activities = relationship("Activity",
-                              backref=backref("location"))
+                              back_populates="location")
 
     # Gives a representation of a Person (for printing out)
     def __repr__(self):
