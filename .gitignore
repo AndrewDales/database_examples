@@ -1,2 +1,4 @@
 /library/library.sqlite
 /email MVC/emails.sqlite
+/student_activity/activities.sqlite
+/social_media/sm_app.sqlite
