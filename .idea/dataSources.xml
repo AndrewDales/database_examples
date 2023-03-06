@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="activities" uuid="a5ac1260-b898-49b9-b6cc-cc3153c19552">
+    <data-source source="LOCAL" name="emails" uuid="0d320c8a-0ed6-42e6-bbce-4a85031ff723">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\dalesa\OneDrive - Highgate School\Programming Resources\Pycharm\database_trial\student_activity\activities.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\dalesa\OneDrive - Highgate School\Programming Resources\Pycharm\database_trial\email MVC\emails.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
