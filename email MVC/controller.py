@@ -4,9 +4,8 @@ from model import EmailAddress
 
 
 class Controller:
-    def __init__(self):
-        # self.view = view
-        self.engine = create_engine('sqlite:///emails.sqlite', echo=True)
+    def __init__(self, db_name='emails.sqlite'):
+        self.engine = create_engine(f'sqlite:///{db_name}', echo=True)
 
     def save(self, email):
         """

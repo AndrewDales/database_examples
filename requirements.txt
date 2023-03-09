@@ -1,3 +1,4 @@
 Faker==16.3.0
 pip==22.3.1
 SQLAlchemy==1.4.27
+pytest~=7.2.2
